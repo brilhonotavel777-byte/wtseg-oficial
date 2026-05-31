@@ -13,8 +13,8 @@ const C = {
 };
 
 const HERO_OVERLAY = [
-  "linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.15) 100%)",
-  "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 50%, rgba(5,5,5,1) 100%)",
+  "linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.86) 10%, rgba(0,0,0,0.50) 55%, rgba(0,0,0,0.04) 100%)",
+  "linear-gradient(180deg, rgba(0,0,0,0.36) 0%, rgba(0,0,0,0.08) 48%, rgba(5,5,5,1) 100%)",
 ].join(", ");
 
 const NAV = [
@@ -193,8 +193,8 @@ export default function App() {
       {/* ── CSS global ──────────────────────────────────── */}
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { background: ${C.bg}; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { background: ${C.bg}; overflow-x: hidden; }
 
         /* ── HEADER */
         .nav-links { display: flex; gap: 28px; align-items: center; }
@@ -432,12 +432,14 @@ export default function App() {
           backgroundImage: "url('/hero-wtseg.png')",
           backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
           display: "flex", alignItems: "center",
+          overflow: "hidden",
         }}>
           <div style={{ position: "absolute", inset: 0, background: HERO_OVERLAY, zIndex: 0 }} />
 
           <div className="hero-content" style={{
             position: "relative", zIndex: 1,
-            maxWidth: "1440px", width: "100%", margin: "0 auto", padding: "88px 48px 48px",
+            maxWidth: "1440px", width: "100%", margin: "0 auto",
+            padding: "88px clamp(24px, 3.5vw, 64px) 48px",
           }}>
             <div style={{ maxWidth: "720px" }}>
               <div style={{
