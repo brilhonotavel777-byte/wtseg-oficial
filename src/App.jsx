@@ -195,6 +195,7 @@ export default function App() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body { background: ${C.bg}; overflow-x: hidden; }
+        #root { width: 100%; }
 
         /* ── HEADER */
         .nav-links { display: flex; gap: 28px; align-items: center; }
@@ -439,7 +440,7 @@ export default function App() {
           <div className="hero-content" style={{
             position: "relative", zIndex: 1,
             maxWidth: "1440px", width: "100%", margin: "0 auto",
-            padding: "88px clamp(24px, 3.5vw, 64px) 48px",
+            padding: "clamp(100px, 12vh, 136px) clamp(24px, 4vw, 72px) 56px",
           }}>
             <div style={{ maxWidth: "720px" }}>
               <div style={{
