@@ -431,7 +431,7 @@ export default function App() {
         <section id="inicio" style={{
           position: "relative", height: "100vh", minHeight: "720px", width: "100%",
           backgroundImage: "url('/heroo.png')",
-          backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
+          backgroundSize: "cover", backgroundPosition: "center 58%", backgroundRepeat: "no-repeat",
           display: "flex", alignItems: "center",
           overflow: "hidden",
         }}>
