@@ -437,7 +437,7 @@ export default function App() {
 
           <div className="hero-content" style={{
             position: "relative", zIndex: 1,
-            maxWidth: "1180px", width: "100%", margin: "0 auto", padding: "88px 40px 40px",
+            maxWidth: "1440px", width: "100%", margin: "0 auto", padding: "88px 48px 48px",
           }}>
             <div style={{ maxWidth: "720px" }}>
               <div style={{
