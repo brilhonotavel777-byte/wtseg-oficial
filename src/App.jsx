@@ -13,7 +13,7 @@ const C = {
 };
 
 const HERO_OVERLAY = [
-  "linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.42) 100%)",
+  "linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.15) 100%)",
   "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 50%, rgba(5,5,5,1) 100%)",
 ].join(", ");
 
@@ -295,7 +295,7 @@ export default function App() {
           .hero-strip   { grid-template-columns: repeat(2, 1fr); }
           .strip-item:nth-child(2) { border-right: none; }
           .strip-item:nth-child(3) { border-right: 1px solid rgba(212,175,55,0.12); }
-          .hero-h1      { font-size: 2.1rem !important; }
+          .hero-h1      { font-size: clamp(1.9rem, 6.5vw, 2.4rem) !important; line-height: 1.15 !important; }
           .stats-grid   { grid-template-columns: repeat(2, 1fr); }
           .timeline     { grid-template-columns: 1fr; gap: 0; }
           .timeline::before { display: none; }
@@ -308,7 +308,7 @@ export default function App() {
           .footer-col-end { text-align: left; }
         }
         @media (max-width: 480px) {
-          .hero-h1    { font-size: 1.75rem !important; }
+          .hero-h1    { font-size: 1.65rem !important; line-height: 1.2 !important; }
           .stats-grid { grid-template-columns: 1fr; }
         }
       `}</style>
@@ -412,8 +412,8 @@ export default function App() {
               </div>
 
               <h1 className="hero-h1" style={{
-                fontSize: "3.6rem", fontWeight: 700, color: C.white,
-                marginBottom: "22px", lineHeight: 1.12, letterSpacing: "-0.5px",
+                fontSize: "clamp(3.2rem, 5vw, 4.8rem)", fontWeight: 700, color: C.white,
+                marginBottom: "22px", lineHeight: 1.05, letterSpacing: "-0.5px", maxWidth: "700px",
               }}>
                 Proteção, Presença<br />e Confiança.
               </h1>
