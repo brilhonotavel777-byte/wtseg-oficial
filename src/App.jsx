@@ -430,7 +430,7 @@ export default function App() {
         {/* ── HERO FULLSCREEN ─────────────────────────────── */}
         <section id="inicio" style={{
           position: "relative", height: "100vh", minHeight: "720px", width: "100%",
-          backgroundImage: "url('/herowtsegui.png')",
+          backgroundImage: "url('/heroo.png')",
           backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
           display: "flex", alignItems: "center",
           overflow: "hidden",
