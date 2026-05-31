@@ -716,7 +716,7 @@ export default function App() {
                   rel="noreferrer"
                   className="dev-link"
                 >
-                  <span className="dev-badge">Solicitar projeto</span>
+                  <span className="dev-badge">Desenvolvimento Web</span>
                   Rodrigo Souza
                 </a>
               </div>
