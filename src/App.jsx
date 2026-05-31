@@ -183,6 +183,17 @@ export default function App() {
   const [open, setOpen]           = useState(false);
   const [statsRef, statsInView]   = useInView(0.2);
 
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
+      }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
   const go = (id) => {
     setOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -357,6 +368,44 @@ export default function App() {
           opacity: 1;
           transform: translateX(-50%) translateY(0);
         }
+
+        /* ── HERO ENTRY ANIMATIONS */
+        @keyframes heroFadeUp {
+          from { opacity: 0; transform: translateY(18px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .hero-badge { animation: heroFadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.08s both; }
+        .hero-brand { animation: heroFadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.20s both; }
+        .hero-h1    { animation: heroFadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.33s both; }
+        .hero-sub   { animation: heroFadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.50s both; }
+        .hero-ctas  { animation: heroFadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.64s both; }
+        .hero-strip { animation: heroFadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.78s both; }
+
+        /* ── SECTION REVEAL */
+        .reveal {
+          opacity: 0;
+          transform: translateY(24px);
+          transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                      transform 0.65s cubic-bezier(0.22,1,0.36,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── FLOATING WA PULSE */
+        @keyframes waPulse {
+          0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.45); }
+          50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.72),
+                                  0 0 0 7px rgba(37,211,102,0.07); }
+        }
+        .wa-float { animation: waPulse 3s ease-in-out infinite; }
+
+        /* ── REDUCED MOTION */
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
       `}</style>
 
       <div style={{ background: C.bg, color: C.white, fontFamily: "'Segoe UI', Arial, sans-serif" }}>
@@ -443,7 +492,7 @@ export default function App() {
             padding: "clamp(100px, 12vh, 136px) clamp(24px, 4vw, 72px) 56px",
           }}>
             <div style={{ maxWidth: "720px" }}>
-              <div style={{
+              <div className="hero-badge" style={{
                 display: "inline-block", color: C.gold, fontSize: "0.7rem",
                 fontWeight: 600, letterSpacing: "2.5px", textTransform: "uppercase",
                 border: "1px solid rgba(212,175,55,0.35)", borderRadius: "4px",
@@ -452,7 +501,7 @@ export default function App() {
                 Segurança Patrimonial • Empresarial • Eventos
               </div>
 
-              <div style={{
+              <div className="hero-brand" style={{
                 color: C.gold, fontWeight: 800, fontSize: "1.05rem",
                 letterSpacing: "6px", textTransform: "uppercase", marginBottom: "16px", opacity: 0.9,
               }}>
@@ -466,7 +515,7 @@ export default function App() {
                 Proteção, Presença<br />e Confiança.
               </h1>
 
-              <p style={{
+              <p className="hero-sub" style={{
                 color: "rgba(214,214,214,0.88)", fontSize: "1.05rem",
                 maxWidth: "560px", marginBottom: "40px", lineHeight: 1.85,
               }}>
@@ -526,7 +575,7 @@ export default function App() {
 
         {/* ── SOBRE ───────────────────────────────────────── */}
         <section id="sobre" style={{ background: C.bg, padding: "112px 24px" }}>
-          <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
+          <div className="reveal" style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <SectionTitle subtitle="Atuação com foco em resultados, organização operacional e proteção real dos ativos dos nossos clientes.">
               Compromisso com a Segurança e a Excelência Operacional
             </SectionTitle>
@@ -560,7 +609,7 @@ export default function App() {
 
         {/* ── SERVIÇOS ────────────────────────────────────── */}
         <section id="servicos" style={{ background: C.graphite, padding: "112px 24px" }}>
-          <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
+          <div className="reveal" style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <SectionTitle subtitle="Cobertura completa para proteger o que mais importa para você e sua empresa.">
               Nossos Serviços
             </SectionTitle>
@@ -572,7 +621,7 @@ export default function App() {
 
         {/* ── ÁREA DE ATUAÇÃO ─────────────────────────────── */}
         <section style={{ background: C.bg, padding: "112px 24px" }}>
-          <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
+          <div className="reveal" style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <SectionTitle subtitle="Soluções presenciais de segurança para diferentes ambientes e necessidades operacionais.">
               Onde Atuamos
             </SectionTitle>
@@ -584,7 +633,7 @@ export default function App() {
 
         {/* ── DIFERENCIAIS ────────────────────────────────── */}
         <section id="diferenciais" style={{ background: C.graphite, padding: "112px 24px" }}>
-          <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
+          <div className="reveal" style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <SectionTitle subtitle="O que nos destaca no mercado de segurança privada.">
               Nossos Diferenciais
             </SectionTitle>
@@ -596,7 +645,7 @@ export default function App() {
 
         {/* ── PROCESSO OPERACIONAL ────────────────────────── */}
         <section style={{ background: C.bg, padding: "112px 24px" }}>
-          <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
+          <div className="reveal" style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <SectionTitle subtitle="Uma metodologia estruturada que garante organização, presença e resultado em cada operação.">
               Como Conduzimos Cada Operação
             </SectionTitle>
@@ -618,7 +667,7 @@ export default function App() {
 
         {/* ── CONTATO ─────────────────────────────────────── */}
         <section id="contato" style={{ background: C.graphite, padding: "112px 24px", textAlign: "center" }}>
-          <div style={{ maxWidth: "620px", margin: "0 auto" }}>
+          <div className="reveal" style={{ maxWidth: "620px", margin: "0 auto" }}>
             <SectionTitle>Entre em Contato</SectionTitle>
             <div className="contact-box" style={{
               background: "rgba(12,12,12,0.92)",
@@ -737,6 +786,7 @@ export default function App() {
           target="_blank"
           rel="noreferrer"
           aria-label="Falar no WhatsApp"
+          className="wa-float"
           style={{
             position: "fixed", bottom: "28px", right: "28px", zIndex: 2000,
             background: "#25d366", color: C.white,
