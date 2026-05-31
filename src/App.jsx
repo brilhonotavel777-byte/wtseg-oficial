@@ -431,7 +431,7 @@ export default function App() {
         <section id="inicio" style={{
           position: "relative", height: "100vh", minHeight: "720px", width: "100%",
           backgroundImage: "url('/hero-wtseg.png')",
-          backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
+          backgroundSize: "cover", backgroundPosition: "center 55%", backgroundRepeat: "no-repeat",
           display: "flex", alignItems: "center",
           overflow: "hidden",
         }}>
@@ -507,7 +507,7 @@ export default function App() {
         </section>
 
         {/* ── PROVA OPERACIONAL ───────────────────────────── */}
-        <section ref={statsRef} style={{ background: C.graphite, padding: "112px 24px" }}>
+        <section ref={statsRef} style={{ background: C.graphite, padding: "80px 24px" }}>
           <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <SectionTitle subtitle="Números que reforçam planejamento, responsabilidade e compromisso na execução das operações de segurança.">
               Presença Operacional que Gera Confiança
