@@ -311,6 +311,51 @@ export default function App() {
           .hero-h1    { font-size: 1.65rem !important; line-height: 1.2 !important; }
           .stats-grid { grid-template-columns: 1fr; }
         }
+
+        /* ── DEV CREDIT */
+        .dev-link {
+          position: relative;
+          display: inline-block;
+          color: #555;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.25s ease, transform 0.25s ease;
+        }
+        .dev-link:hover {
+          color: #d4af37;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          transform: translateY(-2px);
+        }
+        .dev-badge {
+          position: absolute;
+          bottom: calc(100% + 10px);
+          left: 50%;
+          transform: translateX(-50%) translateY(4px);
+          background: #25D366;
+          color: #ffffff;
+          font-size: 0.68rem;
+          padding: 4px 8px;
+          border-radius: 999px;
+          white-space: nowrap;
+          box-shadow: 0 6px 16px rgba(37,211,102,0.35);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .dev-badge::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          border: 5px solid transparent;
+          border-top-color: #25D366;
+        }
+        .dev-link:hover .dev-badge {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
       `}</style>
 
       <div style={{ background: C.bg, color: C.white, fontFamily: "'Segoe UI', Arial, sans-serif" }}>
@@ -661,8 +706,19 @@ export default function App() {
             </div>
 
             <div style={{ borderTop: "1px solid #1a1a1a", paddingTop: "28px", textAlign: "center" }}>
-              <div style={{ color: "#383838", fontSize: "0.78rem" }}>
+              <div style={{ color: "#383838", fontSize: "0.78rem", lineHeight: 2 }}>
                 © {new Date().getFullYear()} WTSEG. Todos os direitos reservados.
+                <br />
+                Desenvolvido por{" "}
+                <a
+                  href="https://wa.me/5511998070085?text=Ol%C3%A1%20Rodrigo%2C%20vi%20o%20site%20da%20WTSEG%20e%20gostaria%20de%20criar%20um%20site."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="dev-link"
+                >
+                  <span className="dev-badge">Solicitar projeto</span>
+                  Rodrigo Souza
+                </a>
               </div>
             </div>
           </div>
