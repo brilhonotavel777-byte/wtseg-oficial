@@ -482,15 +482,20 @@ export default function App() {
                 }}>
                   Solicitar Atendimento
                 </a>
-                <a href={WA} target="_blank" rel="noreferrer" style={{
-                  display: "inline-block",
-                  background: "rgba(255,255,255,0.07)",
-                  border: "1px solid rgba(255,255,255,0.22)",
-                  backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)",
-                  color: C.white, padding: "16px 36px", borderRadius: "8px",
-                  textDecoration: "none", fontWeight: 600, fontSize: "0.95rem",
-                }}>
-                  Falar com Welington
+                <a
+                  href="https://wa.me/5511990005445?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20do%20n%C3%ADvel%20de%20seguran%C3%A7a%20da%20minha%20empresa.%0A%0ANome%20da%20empresa%3A%0ACidade%3A%0ASegmento%3A%0A%0AAguardo%20contato."
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    display: "inline-block",
+                    background: "rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(255,255,255,0.22)",
+                    backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)",
+                    color: C.white, padding: "16px 36px", borderRadius: "8px",
+                    textDecoration: "none", fontWeight: 600, fontSize: "0.95rem",
+                  }}
+                >
+                  Avaliação Gratuita de Segurança
                 </a>
               </div>
 
