@@ -470,8 +470,7 @@ export default function App() {
                 color: "rgba(214,214,214,0.88)", fontSize: "1.05rem",
                 maxWidth: "560px", marginBottom: "40px", lineHeight: 1.85,
               }}>
-                Segurança patrimonial, empresarial e eventos com atuação presencial,
-                planejamento operacional e compromisso com a proteção dos ativos do cliente.
+                Com atuação presencial, planejamento operacional e compromisso com a proteção dos ativos do cliente.
               </p>
 
               <div className="hero-ctas">
