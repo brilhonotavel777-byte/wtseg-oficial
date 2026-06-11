@@ -832,8 +832,11 @@ export default function App() {
                 }}>
                   Atendimento
                 </div>
-                <p style={{ color: C.gray, fontSize: "0.9rem", lineHeight: 1.75 }}>
-                  São Paulo e região
+                <p style={{ color: C.white, fontSize: "0.9rem", fontWeight: 600, lineHeight: 1.75, marginBottom: "4px" }}>
+                  Cobertura Nacional
+                </p>
+                <p style={{ color: C.gray, fontSize: "0.78rem", lineHeight: 1.7 }}>
+                  São Paulo • Grande São Paulo • Interior • Demais Estados
                 </p>
               </div>
               <div className="footer-col-mid">
