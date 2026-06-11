@@ -48,7 +48,7 @@ const SERVICES = [
   { icon: "🎯", title: "Controle de Acesso",      desc: "Gerenciamento de acesso com rigor operacional para garantir a integridade dos ambientes.", image: "/services/service-03.png" },
   { icon: "📅", title: "Segurança para Eventos",  desc: "Cobertura profissional para eventos de todos os portes com equipe qualificada e planejamento dedicado.", image: "/services/service-04.png" },
   { icon: "🔄", title: "Rondas Preventivas",      desc: "Vigilância presencial ativa e rondas periódicas para prevenir ocorrências e garantir segurança contínua.", image: "/services/service-05-v2.png" },
-  { icon: "📦", title: "Proteção de Ativos",      desc: "Salvaguarda de mercadorias, equipamentos e ativos empresariais com responsabilidade operacional." },
+  { icon: "📦", title: "Proteção de Ativos",      desc: "Salvaguarda de mercadorias, equipamentos e ativos empresariais com responsabilidade operacional.", image: "/services/service-06.png" },
 ];
 
 const AREAS = [
