@@ -4,17 +4,20 @@ const WA =
   "https://wa.me/5511990005445?text=Ol%C3%A1%2C%20visitei%20o%20site%20da%20WTSEG%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20de%20seguran%C3%A7a.";
 
 const C = {
-  gold:     "#d4af37",
-  white:    "#ffffff",
-  gray:     "#d6d6d6",
-  bg:       "#050505",
-  graphite: "#0f0f0f",
-  card:     "rgba(17,17,17,0.85)",
+  gold:     "#C8A24A",
+  white:    "#F5F7FA",
+  gray:     "#C7D1DB",
+  bg:       "#06111F",
+  graphite: "#0B1626",
+  card:     "rgba(10,24,42,0.86)",
+  navy:     "#0B1F3A",
+  blue:     "#1E4E8C",
+  silver:   "#BFC9D4",
 };
 
 const HERO_OVERLAY = [
-  "linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.86) 10%, rgba(0,0,0,0.50) 55%, rgba(0,0,0,0.04) 100%)",
-  "linear-gradient(180deg, rgba(0,0,0,0.36) 0%, rgba(0,0,0,0.08) 48%, rgba(5,5,5,1) 100%)",
+  "linear-gradient(90deg, rgba(4,13,26,0.95) 0%, rgba(4,13,26,0.87) 10%, rgba(4,13,26,0.50) 55%, rgba(4,13,26,0.04) 100%)",
+  "linear-gradient(180deg, rgba(4,13,26,0.36) 0%, rgba(4,13,26,0.08) 48%, rgba(6,17,31,1) 100%)",
 ].join(", ");
 
 const NAV = [
@@ -132,7 +135,7 @@ function Card({ icon, title, desc }) {
       background: C.card,
       backdropFilter: "blur(8px)",
       WebkitBackdropFilter: "blur(8px)",
-      border: "1px solid rgba(212,175,55,0.12)",
+      border: "1px solid rgba(191,201,212,0.14)",
       borderRadius: "14px",
       padding: "40px 28px",
       textAlign: "center",
@@ -140,7 +143,7 @@ function Card({ icon, title, desc }) {
       overflow: "hidden",
     }}>
       <div style={{ fontSize: "2.4rem", marginBottom: "20px" }}>{icon}</div>
-      <h3 style={{ color: C.gold, fontWeight: 600, marginBottom: "14px", fontSize: "1.02rem", letterSpacing: "0.3px" }}>
+      <h3 style={{ color: C.white, fontWeight: 600, marginBottom: "14px", fontSize: "1.02rem", letterSpacing: "0.3px" }}>
         {title}
       </h3>
       <p style={{ color: C.gray, fontSize: "0.92rem", lineHeight: 1.8 }}>{desc}</p>
@@ -155,10 +158,10 @@ function StatCard({ prefix, target, suffix, label, active, nth }) {
     <div
       className={`stat-card stat-card-${nth}${active ? " stat-active" : ""}`}
       style={{
-        background: "rgba(15,15,15,0.72)",
+        background: "rgba(11,24,42,0.82)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        border: "1px solid rgba(212,175,55,0.22)",
+        border: "1px solid rgba(191,201,212,0.22)",
         borderRadius: "14px",
         padding: "44px 28px",
         textAlign: "center",
@@ -231,12 +234,12 @@ export default function App() {
         .hero-ctas    { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
         .hero-strip   {
           display: grid; grid-template-columns: repeat(4, 1fr);
-          background: rgba(10,10,10,0.65);
+          background: rgba(6,17,31,0.75);
           backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-          border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; overflow: hidden;
+          border: 1px solid rgba(191,201,212,0.22); border-radius: 12px; overflow: hidden;
         }
         .strip-item { padding: 20px 16px; text-align: center;
-                      border-right: 1px solid rgba(212,175,55,0.12); }
+                      border-right: 1px solid rgba(191,201,212,0.12); }
         .strip-item:last-child { border-right: none; }
 
         /* ── STAT CARDS */
@@ -250,10 +253,10 @@ export default function App() {
         }
         .stat-card::before {
           content: ''; position: absolute; inset: 0;
-          background: radial-gradient(circle at 50% 0%, rgba(212,175,55,0.07) 0%, transparent 65%);
+          background: radial-gradient(circle at 50% 0%, rgba(30,78,140,0.12) 0%, transparent 65%);
           opacity: 0; transition: opacity 0.4s ease;
         }
-        .stat-card:hover { border-color: rgba(212,175,55,0.52) !important;
+        .stat-card:hover { border-color: rgba(30,78,140,0.65) !important;
                            box-shadow: 0 32px 72px rgba(0,0,0,0.55) !important; }
         .stat-card:hover::before { opacity: 1; }
         .stat-active { animation: statEntry 0.7s cubic-bezier(0.22,1,0.36,1) both; }
@@ -266,10 +269,10 @@ export default function App() {
         .card { transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
         .card::before {
           content: ''; position: absolute; inset: 0; border-radius: 14px;
-          background: radial-gradient(circle at 50% 0%, rgba(212,175,55,0.06) 0%, transparent 70%);
+          background: radial-gradient(circle at 50% 0%, rgba(30,78,140,0.08) 0%, transparent 70%);
           opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
         }
-        .card:hover { border-color: rgba(212,175,55,0.40) !important;
+        .card:hover { border-color: rgba(30,78,140,0.55) !important;
                       transform: translateY(-5px);
                       box-shadow: 0 16px 48px rgba(0,0,0,0.55); }
         .card:hover::before { opacity: 1; }
@@ -288,7 +291,7 @@ export default function App() {
         .step-item { text-align: center; padding: 0 20px; }
         .step-num  {
           width: 64px; height: 64px; border-radius: 50%;
-          background: rgba(212,175,55,0.08); border: 2px solid rgba(212,175,55,0.4);
+          background: rgba(30,78,140,0.15); border: 2px solid rgba(200,162,74,0.45);
           display: flex; align-items: center; justify-content: center;
           margin: 0 auto 24px;
           color: ${C.gold}; font-weight: 700; font-size: 1.2rem;
@@ -315,7 +318,7 @@ export default function App() {
           .hero-ctas    { justify-content: center; }
           .hero-strip   { grid-template-columns: repeat(2, 1fr); }
           .strip-item:nth-child(2) { border-right: none; }
-          .strip-item:nth-child(3) { border-right: 1px solid rgba(212,175,55,0.12); }
+          .strip-item:nth-child(3) { border-right: 1px solid rgba(191,201,212,0.12); }
           .hero-h1      { font-size: clamp(1.9rem, 6.5vw, 2.4rem) !important; line-height: 1.15 !important; }
           .stats-grid   { grid-template-columns: repeat(2, 1fr); }
           .timeline     { grid-template-columns: 1fr; gap: 0; }
@@ -343,7 +346,7 @@ export default function App() {
           transition: color 0.25s ease, transform 0.25s ease;
         }
         .dev-link:hover {
-          color: #d4af37;
+          color: #C8A24A;
           text-decoration: underline;
           text-underline-offset: 3px;
           transform: translateY(-2px);
@@ -401,9 +404,9 @@ export default function App() {
 
         /* ── FLOATING WA PULSE */
         @keyframes waPulse {
-          0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.45); }
-          50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.72),
-                                  0 0 0 7px rgba(37,211,102,0.07); }
+          0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.38); }
+          50%       { box-shadow: 0 4px 28px rgba(37,211,102,0.58),
+                                  0 0 0 6px rgba(37,211,102,0.06); }
         }
         .wa-float { animation: waPulse 3s ease-in-out infinite; }
 
@@ -422,9 +425,9 @@ export default function App() {
         {/* ── HEADER ──────────────────────────────────────── */}
         <header style={{
           position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
-          background: "rgba(5,5,5,0.78)",
+          background: "rgba(11,31,58,0.92)",
           backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
-          borderBottom: "1px solid rgba(212,175,55,0.15)",
+          borderBottom: "1px solid rgba(191,201,212,0.18)",
           padding: "0 32px", height: "68px",
           display: "flex", alignItems: "center", justifyContent: "space-between",
         }}>
@@ -463,13 +466,13 @@ export default function App() {
         {/* ── MOBILE MENU ─────────────────────────────────── */}
         <div className={`mob-menu${open ? " is-open" : ""}`} style={{
           position: "fixed", top: "68px", left: 0, right: 0, zIndex: 999,
-          background: "rgba(5,5,5,0.97)",
+          background: "rgba(11,31,58,0.98)",
           backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
-          borderBottom: "1px solid rgba(212,175,55,0.12)",
+          borderBottom: "1px solid rgba(191,201,212,0.15)",
         }}>
           {NAV.map(({ label, id }) => (
             <button key={id} onClick={() => go(id)} style={{
-              background: "none", border: "none", borderBottom: "1px solid #1a1a1a",
+              background: "none", border: "none", borderBottom: "1px solid #0e1e32",
               color: C.gray, cursor: "pointer", fontSize: "0.95rem",
               padding: "18px 32px", textAlign: "left", fontFamily: "inherit",
               width: "100%", textTransform: "uppercase", letterSpacing: "1px",
@@ -606,8 +609,8 @@ export default function App() {
               {["Atuação Presencial","Proteção Patrimonial","Eventos","Empresas","Mercadorias e Ativos","Responsabilidade Operacional"]
                 .map((tag) => (
                   <span key={tag} style={{
-                    background: "rgba(20,20,20,0.9)", border: "1px solid rgba(212,175,55,0.28)",
-                    color: C.gold, borderRadius: "20px", padding: "9px 22px", fontSize: "0.85rem", fontWeight: 500,
+                    background: "rgba(11,24,42,0.9)", border: "1px solid rgba(191,201,212,0.22)",
+                    color: C.silver, borderRadius: "20px", padding: "9px 22px", fontSize: "0.85rem", fontWeight: 500,
                   }}>
                     {tag}
                   </span>
@@ -679,9 +682,9 @@ export default function App() {
           <div className="reveal" style={{ maxWidth: "620px", margin: "0 auto" }}>
             <SectionTitle>Entre em Contato</SectionTitle>
             <div className="contact-box" style={{
-              background: "rgba(12,12,12,0.92)",
+              background: "rgba(10,24,42,0.92)",
               backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-              border: "1px solid rgba(212,175,55,0.18)", borderRadius: "16px",
+              border: "1px solid rgba(191,201,212,0.18)", borderRadius: "16px",
               padding: "56px 48px", boxShadow: "0 24px 80px rgba(0,0,0,0.6)",
             }}>
               <div style={{ color: C.gold, fontWeight: 700, fontSize: "1.9rem", letterSpacing: "4px", marginBottom: "20px" }}>
@@ -718,8 +721,8 @@ export default function App() {
 
         {/* ── FOOTER ──────────────────────────────────────── */}
         <footer style={{
-          background: "#020202",
-          borderTop: "1px solid rgba(212,175,55,0.12)",
+          background: "#040d1a",
+          borderTop: "1px solid rgba(191,201,212,0.14)",
           padding: "64px 40px 40px",
         }}>
           <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
@@ -770,8 +773,8 @@ export default function App() {
               </div>
             </div>
 
-            <div style={{ borderTop: "1px solid #1a1a1a", paddingTop: "28px", textAlign: "center" }}>
-              <div style={{ color: "#383838", fontSize: "0.78rem", lineHeight: 2 }}>
+            <div style={{ borderTop: "1px solid #0e1e32", paddingTop: "28px", textAlign: "center" }}>
+              <div style={{ color: "#4a5a6a", fontSize: "0.78rem", lineHeight: 2 }}>
                 © {new Date().getFullYear()} WTSEG. Todos os direitos reservados.
                 <br />
                 Desenvolvido por{" "}
