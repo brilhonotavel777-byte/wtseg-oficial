@@ -313,6 +313,11 @@ export default function App() {
         /* ── CTA BOX */
         .cta-box { padding: 64px 56px; }
 
+        /* ── PDF BTN */
+        .pdf-btn { transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease; }
+        .pdf-btn:hover { opacity: 0.88; transform: translateY(-3px);
+                         box-shadow: 0 12px 32px rgba(200,162,74,0.28); }
+
         /* ── RESPONSIVE ─────────────────────────────────── */
         @media (max-width: 1024px) {
           .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -704,6 +709,62 @@ export default function App() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── APRESENTAÇÃO INSTITUCIONAL ──────────────────── */}
+        <section style={{ background: C.graphite, padding: "104px 24px" }}>
+          <div className="reveal" style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center" }}>
+            <div style={{
+              background: "rgba(10,24,42,0.88)",
+              backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
+              border: "1px solid rgba(191,201,212,0.18)",
+              borderRadius: "20px",
+              padding: "60px 52px",
+              boxShadow: "0 24px 80px rgba(0,0,0,0.45)",
+            }}>
+              <div style={{
+                display: "inline-flex", alignItems: "center", gap: "9px",
+                background: "rgba(200,162,74,0.1)", border: "1px solid rgba(200,162,74,0.28)",
+                borderRadius: "8px", padding: "8px 18px", marginBottom: "28px",
+              }}>
+                <span style={{ fontSize: "1rem", lineHeight: 1 }}>📄</span>
+                <span style={{
+                  color: C.gold, fontSize: "0.7rem", fontWeight: 700,
+                  letterSpacing: "2px", textTransform: "uppercase",
+                }}>
+                  Material Institucional
+                </span>
+              </div>
+              <h2 style={{
+                color: C.white, fontSize: "clamp(1.75rem, 3.5vw, 2.4rem)",
+                fontWeight: 700, lineHeight: 1.2, marginBottom: "18px",
+              }}>
+                Conheça a WTSEG em 1 minuto
+              </h2>
+              <p style={{
+                color: C.gray, fontSize: "1rem", lineHeight: 1.88,
+                maxWidth: "500px", margin: "0 auto 40px",
+              }}>
+                Baixe nosso material institucional e conheça nossa metodologia, áreas de atuação, diferenciais operacionais e cobertura nacional.
+              </p>
+              <a
+                href="/WTSEG_Institucional.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pdf-btn"
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: "10px",
+                  background: C.gold, color: "#050505",
+                  padding: "18px 48px", borderRadius: "8px",
+                  textDecoration: "none", fontWeight: 700, fontSize: "1rem",
+                  letterSpacing: "0.3px",
+                }}
+              >
+                <span style={{ fontSize: "1.05rem", lineHeight: 1 }}>📄</span>
+                Ver Apresentação Institucional
+              </a>
             </div>
           </div>
         </section>
