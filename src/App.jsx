@@ -353,7 +353,7 @@ export default function App() {
         .dev-link {
           position: relative;
           display: inline-block;
-          color: #555;
+          color: #F5F7FA;
           font-weight: 500;
           text-decoration: none;
           transition: color 0.25s ease, transform 0.25s ease;
@@ -873,7 +873,7 @@ export default function App() {
                   rel="noreferrer"
                   className="dev-link"
                 >
-                  <span className="dev-badge">Desenvolvimento Web</span>
+                  <span className="dev-badge">Transformamos empresas em referências digitais.</span>
                   Rodrigo Souza
                 </a>
               </div>
