@@ -52,7 +52,7 @@ const SERVICES = [
 ];
 
 const AREAS = [
-  { icon: "🏢", title: "Empresas",                desc: "Segurança para escritórios, sedes e ambientes corporativos." },
+  { icon: "🏢", title: "Empresas",                desc: "Segurança para escritórios, sedes e ambientes corporativos.", image: "/locations/location-01.png" },
   { icon: "🏘️", title: "Condomínios",             desc: "Proteção residencial e comercial com presença preventiva." },
   { icon: "📦", title: "Centros Logísticos",       desc: "Cobertura operacional para galpões, cargas e ativos logísticos." },
   { icon: "🤝", title: "Eventos Corporativos",     desc: "Planejamento e execução de segurança para eventos empresariais." },
