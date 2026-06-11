@@ -70,10 +70,10 @@ const DIFFERENTIALS = [
 ];
 
 const STEPS = [
-  { num: "01", title: "Contato Inicial",     desc: "Entendimento da necessidade, local, horários e perfil da operação." },
-  { num: "02", title: "Planejamento",        desc: "Definição da cobertura, equipe, horários e pontos de atenção." },
-  { num: "03", title: "Execução Presencial", desc: "Atuação da equipe de segurança com rondas, presença preventiva e acompanhamento operacional." },
-  { num: "04", title: "Acompanhamento",      desc: "Comunicação, suporte e ajustes necessários durante a execução dos serviços." },
+  { num: "01", title: "Diagnóstico",               desc: "Análise das necessidades, riscos, local e perfil da operação de segurança." },
+  { num: "02", title: "Planejamento",               desc: "Definição da cobertura, equipe, horários e pontos de atenção estratégicos." },
+  { num: "03", title: "Execução Presencial",        desc: "Atuação da equipe com rondas, presença preventiva e acompanhamento em tempo real." },
+  { num: "04", title: "Acompanhamento Operacional", desc: "Comunicação contínua, suporte e ajustes ao longo de toda a execução dos serviços." },
 ];
 
 /* ─────────────────── HOOKS ─────────────────── */
@@ -304,6 +304,15 @@ export default function App() {
         .footer-col-mid { text-align: center; }
         .footer-col-end { text-align: right; }
 
+        /* ── TRUST BAR */
+        .trust-bar { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
+        .trust-item { display: flex; align-items: center; gap: 9px; padding: 14px 28px;
+                      border-right: 1px solid rgba(191,201,212,0.1); }
+        .trust-item:last-child { border-right: none; }
+
+        /* ── CTA BOX */
+        .cta-box { padding: 64px 56px; }
+
         /* ── RESPONSIVE ─────────────────────────────────── */
         @media (max-width: 1024px) {
           .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -330,10 +339,14 @@ export default function App() {
           .footer-cols  { grid-template-columns: 1fr; gap: 28px; }
           .footer-col-mid { text-align: left; }
           .footer-col-end { text-align: left; }
+          .trust-item { padding: 10px 16px; border-right: none !important; width: 50%; }
+          .trust-item:nth-child(odd) { border-right: 1px solid rgba(191,201,212,0.1) !important; }
+          .cta-box { padding: 40px 24px !important; }
         }
         @media (max-width: 480px) {
           .hero-h1    { font-size: 1.65rem !important; line-height: 1.2 !important; }
           .stats-grid { grid-template-columns: 1fr; }
+          .trust-item { width: 100%; border-right: none !important; }
         }
 
         /* ── DEV CREDIT */
@@ -571,6 +584,24 @@ export default function App() {
           </div>
         </section>
 
+        {/* ── BARRA DE CONFIANÇA ──────────────────────────── */}
+        <div style={{ background: C.navy, borderBottom: "1px solid rgba(191,201,212,0.1)", padding: "4px 24px" }}>
+          <div className="trust-bar" style={{ maxWidth: "1180px", margin: "0 auto" }}>
+            {[
+              "Atendimento Operacional 24h",
+              "Equipe Qualificada",
+              "Atuação Presencial",
+              "Planejamento Estratégico",
+              "Proteção Patrimonial",
+            ].map((item) => (
+              <div key={item} className="trust-item">
+                <span style={{ color: C.gold, fontWeight: 700, fontSize: "0.88rem", lineHeight: 1 }}>✓</span>
+                <span style={{ color: C.silver, fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.3px" }}>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* ── PROVA OPERACIONAL ───────────────────────────── */}
         <section ref={statsRef} style={{ background: C.graphite, padding: "80px 24px" }}>
           <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
@@ -659,7 +690,7 @@ export default function App() {
         <section style={{ background: C.bg, padding: "112px 24px" }}>
           <div className="reveal" style={{ maxWidth: "1180px", margin: "0 auto" }}>
             <SectionTitle subtitle="Uma metodologia estruturada que garante organização, presença e resultado em cada operação.">
-              Como Conduzimos Cada Operação
+              Processo WTSEG
             </SectionTitle>
             <div className="timeline">
               {STEPS.map(({ num, title, desc }, i) => (
@@ -673,6 +704,61 @@ export default function App() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── AVALIAÇÃO GRATUITA CTA ──────────────────────── */}
+        <section style={{
+          background: "radial-gradient(ellipse at 50% 40%, rgba(30,78,140,0.13) 0%, transparent 68%), #06111F",
+          padding: "104px 24px",
+        }}>
+          <div className="reveal" style={{ maxWidth: "780px", margin: "0 auto", textAlign: "center" }}>
+            <div className="cta-box" style={{
+              background: "rgba(10,24,42,0.92)",
+              backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
+              border: "1px solid rgba(200,162,74,0.28)",
+              borderRadius: "20px",
+              boxShadow: "0 0 80px rgba(30,78,140,0.14), 0 32px 80px rgba(0,0,0,0.5)",
+              position: "relative", overflow: "hidden",
+            }}>
+              <div style={{
+                position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
+                width: "55%", height: "1px",
+                background: "linear-gradient(90deg, transparent, rgba(200,162,74,0.55), transparent)",
+              }} />
+              <div style={{
+                color: C.gold, fontSize: "0.7rem", fontWeight: 600,
+                letterSpacing: "2.5px", textTransform: "uppercase", marginBottom: "22px",
+              }}>
+                Avaliação Gratuita
+              </div>
+              <h2 style={{
+                color: C.white, fontSize: "clamp(1.75rem, 3.5vw, 2.55rem)",
+                fontWeight: 700, lineHeight: 1.2, marginBottom: "20px",
+              }}>
+                Sua empresa está realmente protegida?
+              </h2>
+              <p style={{
+                color: C.gray, fontSize: "1rem", lineHeight: 1.88,
+                maxWidth: "500px", margin: "0 auto 40px",
+              }}>
+                Receba uma análise inicial gratuita e identifique possíveis vulnerabilidades operacionais e patrimoniais.
+              </p>
+              <a
+                href="https://wa.me/5511990005445?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20do%20n%C3%ADvel%20de%20seguran%C3%A7a%20da%20minha%20empresa.%0A%0ANome%20da%20empresa%3A%0ACidade%3A%0ASegmento%3A%0A%0AAguardo%20contato."
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "inline-block",
+                  background: C.gold, color: "#050505",
+                  padding: "18px 52px", borderRadius: "8px",
+                  textDecoration: "none", fontWeight: 700, fontSize: "1rem",
+                  letterSpacing: "0.3px",
+                }}
+              >
+                Avaliação Gratuita de Segurança
+              </a>
             </div>
           </div>
         </section>
