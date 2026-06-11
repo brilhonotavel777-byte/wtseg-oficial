@@ -43,7 +43,7 @@ const STAT_METRICS = [
 ];
 
 const SERVICES = [
-  { icon: "🛡️", title: "Segurança Patrimonial",  desc: "Proteção eficiente de patrimônio físico com atuação presencial e planejamento estratégico." },
+  { icon: "🛡️", title: "Segurança Patrimonial",  desc: "Proteção eficiente de patrimônio físico com atuação presencial e planejamento estratégico.", image: "/services/service-01.png" },
   { icon: "🏢", title: "Segurança Empresarial",   desc: "Soluções adaptadas ao ambiente corporativo com foco em prevenção e controle operacional." },
   { icon: "🎯", title: "Controle de Acesso",      desc: "Gerenciamento de acesso com rigor operacional para garantir a integridade dos ambientes." },
   { icon: "📅", title: "Segurança para Eventos",  desc: "Cobertura profissional para eventos de todos os portes com equipe qualificada e planejamento dedicado." },
@@ -129,7 +129,7 @@ function SectionTitle({ children, subtitle }) {
   );
 }
 
-function Card({ icon, title, desc }) {
+function Card({ icon, title, desc, image }) {
   return (
     <div className="card" style={{
       background: C.card,
@@ -137,16 +137,29 @@ function Card({ icon, title, desc }) {
       WebkitBackdropFilter: "blur(8px)",
       border: "1px solid rgba(191,201,212,0.14)",
       borderRadius: "14px",
-      padding: "40px 28px",
+      padding: image ? "0" : "40px 28px",
       textAlign: "center",
       position: "relative",
       overflow: "hidden",
     }}>
-      <div style={{ fontSize: "2.4rem", marginBottom: "20px" }}>{icon}</div>
-      <h3 style={{ color: C.white, fontWeight: 600, marginBottom: "14px", fontSize: "1.02rem", letterSpacing: "0.3px" }}>
-        {title}
-      </h3>
-      <p style={{ color: C.gray, fontSize: "0.92rem", lineHeight: 1.8 }}>{desc}</p>
+      {image ? (
+        <img
+          src={image}
+          alt={title}
+          style={{
+            width: "100%", height: "200px", objectFit: "cover",
+            borderRadius: "14px 14px 0 0", display: "block",
+          }}
+        />
+      ) : (
+        <div style={{ fontSize: "2.4rem", marginBottom: "20px" }}>{icon}</div>
+      )}
+      <div style={image ? { padding: "24px 28px 32px" } : {}}>
+        <h3 style={{ color: C.white, fontWeight: 600, marginBottom: "14px", fontSize: "1.02rem", letterSpacing: "0.3px" }}>
+          {title}
+        </h3>
+        <p style={{ color: C.gray, fontSize: "0.92rem", lineHeight: 1.8 }}>{desc}</p>
+      </div>
     </div>
   );
 }
