@@ -45,7 +45,7 @@ const STAT_METRICS = [
 const SERVICES = [
   { icon: "🛡️", title: "Segurança Patrimonial",  desc: "Proteção eficiente de patrimônio físico com atuação presencial e planejamento estratégico.", image: "/services/service-01.png" },
   { icon: "🏢", title: "Segurança Empresarial",   desc: "Soluções adaptadas ao ambiente corporativo com foco em prevenção e controle operacional.", image: "/services/service-02.png" },
-  { icon: "🎯", title: "Controle de Acesso",      desc: "Gerenciamento de acesso com rigor operacional para garantir a integridade dos ambientes." },
+  { icon: "🎯", title: "Controle de Acesso",      desc: "Gerenciamento de acesso com rigor operacional para garantir a integridade dos ambientes.", image: "/services/service-03.png" },
   { icon: "📅", title: "Segurança para Eventos",  desc: "Cobertura profissional para eventos de todos os portes com equipe qualificada e planejamento dedicado." },
   { icon: "🔄", title: "Rondas Preventivas",      desc: "Vigilância presencial ativa e rondas periódicas para prevenir ocorrências e garantir segurança contínua." },
   { icon: "📦", title: "Proteção de Ativos",      desc: "Salvaguarda de mercadorias, equipamentos e ativos empresariais com responsabilidade operacional." },
