@@ -313,10 +313,27 @@ export default function App() {
         /* ── CTA BOX */
         .cta-box { padding: 64px 56px; }
 
-        /* ── PDF BTN */
-        .pdf-btn { transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease; }
-        .pdf-btn:hover { opacity: 0.88; transform: translateY(-3px);
-                         box-shadow: 0 12px 32px rgba(200,162,74,0.28); }
+        /* ── PREMIUM BUTTONS */
+        .premium-btn {
+          transition: transform 0.22s cubic-bezier(0.22,1,0.36,1),
+                      box-shadow 0.22s cubic-bezier(0.22,1,0.36,1),
+                      opacity 0.22s ease;
+        }
+        .premium-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 36px rgba(255,255,255,0.14);
+          opacity: 0.93;
+        }
+        .premium-btn-glass {
+          transition: transform 0.22s cubic-bezier(0.22,1,0.36,1),
+                      box-shadow 0.22s cubic-bezier(0.22,1,0.36,1),
+                      background 0.22s ease;
+        }
+        .premium-btn-glass:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 34px rgba(255,255,255,0.10);
+          background: rgba(255,255,255,0.11) !important;
+        }
 
         /* ── RESPONSIVE ─────────────────────────────────── */
         @media (max-width: 1024px) {
@@ -469,7 +486,7 @@ export default function App() {
             ))}
           </nav>
 
-          <a href={WA} target="_blank" rel="noreferrer" className="wa-btn" style={{
+          <a href={WA} target="_blank" rel="noreferrer" className="wa-btn premium-btn" style={{
             background: C.gold, color: "#050505", padding: "10px 22px",
             borderRadius: "6px", textDecoration: "none", fontWeight: 700, fontSize: "0.85rem",
           }}>
@@ -498,7 +515,7 @@ export default function App() {
               {label}
             </button>
           ))}
-          <a href={WA} target="_blank" rel="noreferrer" style={{
+          <a href={WA} target="_blank" rel="noreferrer" className="premium-btn" style={{
             display: "block", background: C.gold, color: "#050505",
             padding: "18px 32px", textDecoration: "none", fontWeight: 700, fontSize: "0.95rem",
           }}>
@@ -553,7 +570,7 @@ export default function App() {
               </p>
 
               <div className="hero-ctas">
-                <a href={WA} target="_blank" rel="noreferrer" style={{
+                <a href={WA} target="_blank" rel="noreferrer" className="premium-btn" style={{
                   display: "inline-block", background: C.gold, color: "#050505",
                   padding: "16px 40px", borderRadius: "8px", textDecoration: "none",
                   fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.3px",
@@ -564,6 +581,7 @@ export default function App() {
                   href="https://wa.me/5511990005445?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20do%20n%C3%ADvel%20de%20seguran%C3%A7a%20da%20minha%20empresa.%0A%0ANome%20da%20empresa%3A%0ACidade%3A%0ASegmento%3A%0A%0AAguardo%20contato."
                   target="_blank"
                   rel="noreferrer"
+                  className="premium-btn-glass"
                   style={{
                     display: "inline-block",
                     background: "rgba(255,255,255,0.07)",
@@ -753,7 +771,7 @@ export default function App() {
                 href="/WTSEG_Institucional.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pdf-btn"
+                className="premium-btn"
                 style={{
                   display: "inline-flex", alignItems: "center", gap: "10px",
                   background: C.gold, color: "#050505",
@@ -810,6 +828,7 @@ export default function App() {
                 href="https://wa.me/5511990005445?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20do%20n%C3%ADvel%20de%20seguran%C3%A7a%20da%20minha%20empresa.%0A%0ANome%20da%20empresa%3A%0ACidade%3A%0ASegmento%3A%0A%0AAguardo%20contato."
                 target="_blank"
                 rel="noreferrer"
+                className="premium-btn"
                 style={{
                   display: "inline-block",
                   background: C.gold, color: "#050505",
@@ -855,7 +874,7 @@ export default function App() {
                 <span style={{ color: C.white, fontWeight: 600 }}>WhatsApp: </span>
                 <span style={{ color: C.gold, fontWeight: 500 }}>(11) 99000-5445</span>
               </div>
-              <a href={WA} target="_blank" rel="noreferrer" style={{
+              <a href={WA} target="_blank" rel="noreferrer" className="premium-btn" style={{
                 display: "inline-block", background: C.gold, color: "#050505",
                 padding: "18px 52px", borderRadius: "8px", textDecoration: "none",
                 fontWeight: 700, fontSize: "1rem",
