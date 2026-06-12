@@ -57,7 +57,7 @@ const AREAS = [
   { icon: "📦", title: "Centros Logísticos",       desc: "Cobertura operacional para galpões, cargas e ativos logísticos.", image: "/locations/location-03.png" },
   { icon: "🤝", title: "Eventos Corporativos",     desc: "Planejamento e execução de segurança para eventos empresariais.", image: "/locations/location-04.png" },
   { icon: "🎉", title: "Eventos Privados",          desc: "Segurança personalizada para celebrações e eventos exclusivos.", image: "/locations/location-05.png" },
-  { icon: "🏠", title: "Patrimônios Residenciais", desc: "Proteção de residências e patrimônios de alto valor." },
+  { icon: "🏠", title: "Patrimônios Residenciais", desc: "Proteção de residências e patrimônios de alto valor.", image: "/locations/location-06.png" },
 ];
 
 const DIFFERENTIALS = [
