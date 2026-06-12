@@ -55,7 +55,7 @@ const AREAS = [
   { icon: "🏢", title: "Empresas",                desc: "Segurança para escritórios, sedes e ambientes corporativos.", image: "/locations/location-01.png" },
   { icon: "🏘️", title: "Condomínios",             desc: "Proteção residencial e comercial com presença preventiva.", image: "/locations/location-02.png" },
   { icon: "📦", title: "Centros Logísticos",       desc: "Cobertura operacional para galpões, cargas e ativos logísticos.", image: "/locations/location-03.png" },
-  { icon: "🤝", title: "Eventos Corporativos",     desc: "Planejamento e execução de segurança para eventos empresariais." },
+  { icon: "🤝", title: "Eventos Corporativos",     desc: "Planejamento e execução de segurança para eventos empresariais.", image: "/locations/location-04.png" },
   { icon: "🎉", title: "Eventos Privados",          desc: "Segurança personalizada para celebrações e eventos exclusivos." },
   { icon: "🏠", title: "Patrimônios Residenciais", desc: "Proteção de residências e patrimônios de alto valor." },
 ];
