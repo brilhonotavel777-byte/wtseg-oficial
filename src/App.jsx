@@ -303,8 +303,8 @@ export default function App() {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 36px 28px;
-          height: 160px;
+          padding: 28px;
+          min-height: 210px;
           transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
           overflow: hidden;
           position: relative;
@@ -321,8 +321,9 @@ export default function App() {
         }
         .client-card:hover::before { opacity: 1; }
         .client-card img {
-          max-width: 100%;
-          max-height: 100%;
+          width: 100%;
+          max-width: 82%;
+          max-height: 120px;
           object-fit: contain;
           display: block;
         }
