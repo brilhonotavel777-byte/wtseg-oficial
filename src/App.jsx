@@ -60,13 +60,13 @@ const AREAS = [
   { icon: "🏠", title: "Patrimônios Residenciais", desc: "Proteção de residências e patrimônios de alto valor.", image: "/locations/location-06.png" },
 ];
 
-const DIFFERENTIALS = [
-  { icon: "👥", title: "Equipe Qualificada",         desc: "Profissionais treinados para atuar com excelência em diferentes ambientes e cenários operacionais." },
-  { icon: "📍", title: "Presença Operacional",        desc: "Vigilância e prevenção garantindo visibilidade, controle e resposta imediata em cada operação." },
-  { icon: "⚡", title: "Atendimento Ágil",            desc: "Resposta rápida e eficiente para atender às demandas dos clientes com precisão e agilidade." },
-  { icon: "🗂️", title: "Planejamento Estratégico",   desc: "Cada operação é planejada com cuidado para maximizar eficácia e minimizar riscos." },
-  { icon: "✅", title: "Compromisso com Resultados", desc: "Foco total na entrega de resultados com presença operacional contínua e responsabilidade total." },
-  { icon: "🎯", title: "Cobertura Personalizada",    desc: "Soluções adaptadas às necessidades específicas de cada cliente, empresa ou evento." },
+const CLIENTS = [
+  { name: "Drogaleste",        image: "/differentials/differential-01.png" },
+  { name: "Full Face Medic",   image: "/differentials/differential-02.png" },
+  { name: "Ipiranga",          image: "/differentials/differential-03.png" },
+  { name: "Prime Tennessee",   image: "/differentials/differential-04.png" },
+  { name: "Nova Opção",        image: "/differentials/differential-05.png" },
+  { name: "DreamPack Solution",image: "/differentials/differential-06.png" },
 ];
 
 const STEPS = [
@@ -291,8 +291,41 @@ export default function App() {
         .card:hover::before { opacity: 1; }
 
         /* ── GRIDS */
-        .grid-auto  { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .grid-auto    { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .stats-grid   { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .clients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+        /* ── CLIENT LOGO CARDS */
+        .client-card {
+          background: rgba(10,24,42,0.86);
+          border: 1px solid rgba(191,201,212,0.14);
+          border-radius: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 36px 28px;
+          height: 160px;
+          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+          overflow: hidden;
+          position: relative;
+        }
+        .client-card::before {
+          content: ''; position: absolute; inset: 0; border-radius: 14px;
+          background: radial-gradient(circle at 50% 0%, rgba(30,78,140,0.08) 0%, transparent 70%);
+          opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+        }
+        .client-card:hover {
+          border-color: rgba(30,78,140,0.55) !important;
+          transform: translateY(-5px);
+          box-shadow: 0 16px 48px rgba(0,0,0,0.55);
+        }
+        .client-card:hover::before { opacity: 1; }
+        .client-card img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          display: block;
+        }
 
         /* ── TIMELINE */
         .timeline { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
@@ -350,7 +383,8 @@ export default function App() {
 
         /* ── RESPONSIVE ─────────────────────────────────── */
         @media (max-width: 1024px) {
-          .stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .stats-grid   { grid-template-columns: repeat(2, 1fr); }
+          .clients-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
           .nav-links { display: none; }
@@ -365,6 +399,7 @@ export default function App() {
           .strip-item:nth-child(3) { border-right: 1px solid rgba(191,201,212,0.12); }
           .hero-h1      { font-size: clamp(1.9rem, 6.5vw, 2.4rem) !important; line-height: 1.15 !important; }
           .stats-grid   { grid-template-columns: repeat(2, 1fr); }
+          .clients-grid { grid-template-columns: 1fr; }
           .timeline     { grid-template-columns: 1fr; gap: 0; }
           .timeline::before { display: none; }
           .step-item    { display: flex; gap: 20px; text-align: left; padding: 0; margin-bottom: 36px; align-items: flex-start; }
@@ -710,14 +745,18 @@ export default function App() {
           </div>
         </section>
 
-        {/* ── DIFERENCIAIS ────────────────────────────────── */}
+        {/* ── EMPRESAS QUE CONFIAM ────────────────────────── */}
         <section id="diferenciais" style={{ background: C.graphite, padding: "112px 24px" }}>
           <div className="reveal" style={{ maxWidth: "1180px", margin: "0 auto" }}>
-            <SectionTitle subtitle="O que nos destaca no mercado de segurança privada.">
-              Nossos Diferenciais
+            <SectionTitle subtitle="Presença operacional em empresas de diversos segmentos.">
+              Empresas que Confiam na WTSEG
             </SectionTitle>
-            <div className="grid-auto">
-              {DIFFERENTIALS.map((d) => <Card key={d.title} {...d} />)}
+            <div className="clients-grid">
+              {CLIENTS.map((c) => (
+                <div key={c.name} className="client-card">
+                  <img src={c.image} alt={c.name} />
+                </div>
+              ))}
             </div>
           </div>
         </section>
