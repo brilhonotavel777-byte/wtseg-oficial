@@ -296,6 +296,7 @@ export default function App() {
         .clients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
         /* ── CLIENT LOGO CARDS */
+        /* ── CLIENT LOGO CARDS */
         .client-card {
           background: rgba(10,24,42,0.86);
           border: 1px solid rgba(191,201,212,0.14);
@@ -303,7 +304,7 @@ export default function App() {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 28px;
+          padding: 12px;
           min-height: 210px;
           transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
           overflow: hidden;
@@ -322,8 +323,9 @@ export default function App() {
         .client-card:hover::before { opacity: 1; }
         .client-card img {
           width: 100%;
-          max-width: 82%;
-          max-height: 120px;
+          height: 100%;
+          max-width: 96%;
+          max-height: 170px;
           object-fit: contain;
           display: block;
         }
