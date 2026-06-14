@@ -421,6 +421,8 @@ export default function App() {
         @media (max-width: 768px) {
           .nav-links { display: none; }
           .wa-btn    { display: none; }
+          .cdc-btn   { display: inline-flex; padding: 18px 14px; gap: 8px; min-height: 52px; }
+          .cdc-title { display: none; }
           .burger    { display: flex; }
           .mob-menu.is-open { display: flex; flex-direction: column; }
           #inicio { min-height: 760px !important; }
