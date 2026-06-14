@@ -1,6 +1,6 @@
 import { Jimp } from "jimp";
 
-const INPUT  = "public/differentials/differential-05.backup.png"; // da arte original
+const INPUT  = "public/differentials/differential-05.png"; // arte final (backups removidos)
 const OUTPUT = "public/differentials/differential-05.png";
 const CANVAS_W = 1774;
 const CANVAS_H = 887;
