@@ -352,7 +352,7 @@ export default function App() {
         .client-card:hover::before { opacity: 1; }
         .client-card img {
           width: 100%;
-          height: 100%;
+          height: auto;
           max-width: 96%;
           max-height: 170px;
           object-fit: contain;
@@ -804,7 +804,12 @@ export default function App() {
             <div className="clients-grid">
               {CLIENTS.map((c) => (
                 <div key={c.name} className="client-card">
-                  <img src={c.image} alt={c.name} />
+                  <img
+                    src={c.image}
+                    alt={c.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               ))}
             </div>
