@@ -64,9 +64,9 @@ const CLIENTS = [
   { name: "Drogaleste",        image: "/differentials/differential-01.png" },
   { name: "Full Face Medic",   image: "/differentials/differential-02.png" },
   { name: "Ipiranga",          image: "/differentials/differential-03.png" },
-  { name: "Prime Tennessee",   image: "/differentials/differential-04.png" },
-  { name: "Nova Opção",        image: "/differentials/differential-05.png" },
-  { name: "DreamPack Solution",image: "/differentials/differential-06.png" },
+  { name: "Prime Tennessee",   image: "/differentials/differential-04.webp" },
+  { name: "Nova Opção",        image: "/differentials/differential-05.webp" },
+  { name: "DreamPack Solution",image: "/differentials/differential-06.webp" },
 ];
 
 const STEPS = [
